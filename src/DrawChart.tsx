@@ -4,6 +4,7 @@ import { extent, scaleLog } from "d3";
 interface Iprop {
   SVG: any;
   chartData: ChartData[];
+  data: ChartData[];
   height: number;
   width: number;
   margin: Margin;
@@ -24,11 +25,14 @@ export type Margin = {
   top: number;
   bottom: number;
 };
-const drawChart: FC<Iprop> = ({chartData}) => {
+const drawChart: FC<Iprop> = ({ chartData, data, margin, width, height }) => {
   // scales
   let maxRadius: number = 40;
   let xScale = scaleLog()
-  .domain(extent(chartData,d=>d.gdp_cap);
+    .domain(
+      extent<ChartData, number>(data, (d) => d.gdp_cap) as [Number, number]
+    )
+    .range([margin.left, width - margin.right]);
 
   return <div>drawChart</div>;
 };

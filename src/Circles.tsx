@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Margin } from "./DrawChart";
+import data from "./datas.json";
 interface Iprop {
   year: number;
   width: number;
