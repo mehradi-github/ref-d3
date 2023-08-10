@@ -41,7 +41,7 @@ const drawChart: FC<Iprop> = ({ chartData, data, margin, width, height }) => {
     .range([height - margin.bottom, margin.top]);
   let rScale = scaleSqrt()
     .domain(
-      extent<ChartData, number>(data, (d) => d.life_exp) as [Number, number]
+      extent<ChartData, number>(data, (d) => d.population) as [Number, number]
     )
     .range([1, maxRadius]);
   return <div>drawChart</div>;
