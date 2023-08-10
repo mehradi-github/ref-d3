@@ -9,7 +9,13 @@ function App() {
       <h1 className="header">D3.js chart</h1>
       <div className="slider"></div>
       <div className="chart">
-        <Circles year={1957} width={width} height={height}></Circles>
+        <Circles
+          year={1957}
+          width={width}
+          height={height}
+          colorScale={""}
+          selectedContinent={""}
+        ></Circles>
       </div>
     </div>
   );
