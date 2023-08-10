@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { extent, scaleLinear, scaleLog } from "d3";
+import { extent, scaleLinear, scaleLog, scaleSqrt } from "d3";
 
 interface Iprop {
   SVG: any;
@@ -39,7 +39,11 @@ const drawChart: FC<Iprop> = ({ chartData, data, margin, width, height }) => {
       extent<ChartData, number>(data, (d) => d.life_exp) as [Number, number]
     )
     .range([height - margin.bottom, margin.top]);
-
+  let rScale = scaleSqrt()
+    .domain(
+      extent<ChartData, number>(data, (d) => d.life_exp) as [Number, number]
+    )
+    .range([1, maxRadius]);
   return <div>drawChart</div>;
 };
 export default drawChart;
