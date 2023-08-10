@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { extent, scaleLinear, scaleLog, scaleSqrt } from "d3";
+import { ScaleOrdinal, extent, scaleLinear, scaleLog, scaleSqrt } from "d3";
 
 interface Iprop {
   SVG: any;
@@ -8,7 +8,7 @@ interface Iprop {
   height: number;
   width: number;
   margin: Margin;
-  colorScale: any;
+  colorScale: ScaleOrdinal<string, unknown, never>;
   selectedContinent: string;
 }
 export type ChartData = {
