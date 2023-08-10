@@ -1,8 +1,9 @@
 import React, { FC } from "react";
+import { extent, scaleLog } from "d3";
+
 interface Iprop {
   SVG: any;
   chartData: ChartData[];
-  data: any;
   height: number;
   width: number;
   margin: Margin;
@@ -23,9 +24,11 @@ export type Margin = {
   top: number;
   bottom: number;
 };
-const drawChart: FC<Iprop> = ({}) => {
+const drawChart: FC<Iprop> = ({chartData}) => {
   // scales
   let maxRadius: number = 40;
+  let xScale = scaleLog()
+  .domain(extent(chartData,d=>d.gdp_cap);
 
   return <div>drawChart</div>;
 };
