@@ -9,7 +9,7 @@ interface Iprop {
   width: number;
   margin: Margin;
   colorScale: ScaleOrdinal<string, unknown, never>;
-  selectedContinent: string;
+  selectedContinent: string[];
 }
 export type ChartData = {
   country: string;
