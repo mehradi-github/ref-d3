@@ -21,3 +21,24 @@
       "legend";
   }
 }
+.header {
+  grid-area: header;
+  font-size: 48px;
+  text-align: left;
+}
+.chart {
+  grid-area: chart;
+  width: 100%;
+}
+.slider {
+  grid-area: slider;
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 auto;
+}
+.legend {
+  grid-area: legend;
+}
