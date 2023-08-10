@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Circles from "./Circles";
 const width = 960;
 const height = 500;
