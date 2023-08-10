@@ -4,6 +4,7 @@ import Circles from "./Circles";
 const width = 960;
 const height = 500;
 function App() {
+  const continents = [...new Set(data.map((d) => d.continent))];
   return (
     <div className="App">
       <h1 className="header">D3.js chart</h1>
