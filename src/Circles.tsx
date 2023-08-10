@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef } from "react";
-import { Margin } from "./DrawChart";
+import drawChart, { ChartData, Margin } from "./DrawChart";
 import data from "./datas.json";
 import { select } from "d3";
 interface Iprop {
@@ -22,6 +22,16 @@ const Circles: FC<Iprop> = ({
   const svgRef = useRef<SVGSVGElement>(null);
   useEffect(() => {
     const SVG = select(svgRef.current!);
+    drawChart({
+      SVG,
+      chartData,
+      data,
+      height,
+      width,
+      margin,
+      colorScale,
+      selectedContinent,
+    });
   }, [chartData, height, width, colorScale, selectedContinent]);
 
   return <svg ref={svgRef} viewBox={`0 0 width height`}></svg>;

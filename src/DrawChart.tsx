@@ -25,7 +25,16 @@ export type Margin = {
   top: number;
   bottom: number;
 };
-const drawChart: FC<Iprop> = ({ chartData, data, margin, width, height }) => {
+const drawChart: FC<Iprop> = ({
+  SVG,
+  chartData,
+  data,
+  height,
+  width,
+  margin,
+  colorScale,
+  selectedContinent,
+}) => {
   // scales
   let maxRadius: number = 40;
   let xScale = scaleLog()
