@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import { ScaleOrdinal, extent, scaleLinear, scaleLog, scaleSqrt } from "d3";
 
 export type ChartData = {
