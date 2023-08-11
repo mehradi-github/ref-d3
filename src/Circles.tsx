@@ -22,7 +22,7 @@ const Circles: FC<Iprop> = ({
   const svgRef = useRef<SVGSVGElement>(null);
   useEffect(() => {
     const SVG = select(svgRef.current!);
-    drawChart({
+    drawChart(
       SVG,
       chartData,
       data,
@@ -30,8 +30,8 @@ const Circles: FC<Iprop> = ({
       width,
       margin,
       colorScale,
-      selectedContinent,
-    });
+      selectedContinent
+    );
   }, [chartData, height, width, colorScale, selectedContinent]);
 
   return (
