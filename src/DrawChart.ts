@@ -1,16 +1,6 @@
 import React, { FC } from "react";
 import { ScaleOrdinal, extent, scaleLinear, scaleLog, scaleSqrt } from "d3";
 
-interface Iprop {
-  SVG: any;
-  chartData: ChartData[];
-  data: ChartData[];
-  height: number;
-  width: number;
-  margin: Margin;
-  colorScale: ScaleOrdinal<string, unknown, never>;
-  selectedContinent: string[];
-}
 export type ChartData = {
   country: string;
   year: number;
@@ -25,16 +15,16 @@ export type Margin = {
   top: number;
   bottom: number;
 };
-const drawChart: FC<Iprop> = ({
-  SVG,
-  chartData,
-  data,
-  height,
-  width,
-  margin,
-  colorScale,
-  selectedContinent,
-}) => {
+const drawChart = (
+  SVG: any,
+  chartData: ChartData[],
+  data: ChartData[],
+  height: number,
+  width: number,
+  margin: Margin,
+  colorScale: ScaleOrdinal<string, unknown, never>,
+  selectedContinent: string[]
+) => {
   // scales
   let maxRadius: number = 40;
   let xScale = scaleLog()
@@ -68,7 +58,5 @@ const drawChart: FC<Iprop> = ({
     .attr("r", (d: ChartData) => rScale(d.population))
     .attr("opacity", 1)
     .style("fill", (d: ChartData) => colorScale(d.continent));
-
-  return <div>drawChart</div>;
 };
 export default drawChart;
