@@ -53,6 +53,11 @@ const drawChart: FC<Iprop> = ({
       extent<ChartData, number>(data, (d) => d.population) as [Number, number]
     )
     .range([1, maxRadius]);
+
+  console.log(xScale(20));
+  console.log(yScale(50));
+  console.log(rScale(1100948));
+  console.log(colorScale("Africa"));
   return <div>drawChart</div>;
 };
 export default drawChart;

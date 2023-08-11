@@ -34,6 +34,6 @@ const Circles: FC<Iprop> = ({
     });
   }, [chartData, height, width, colorScale, selectedContinent]);
 
-  return <svg ref={svgRef} viewBox={`0 0 width height`}></svg>;
+  return <svg ref={svgRef} viewBox={`0 0 ${width} ${height}`}></svg>;
 };
 export default Circles;
