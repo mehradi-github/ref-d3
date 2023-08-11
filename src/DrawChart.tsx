@@ -58,6 +58,17 @@ const drawChart: FC<Iprop> = ({
   console.log(yScale(50));
   console.log(rScale(1100948));
   console.log(colorScale("Africa"));
+
+  SVG.selectAll("circle")
+    .data(chartData)
+    .transition()
+    .duration(500)
+    .attr("cx", (d: ChartData) => xScale(d.gdp_cap))
+    .attr("cy", (d: ChartData) => yScale(d.life_exp))
+    .attr("r", (d: ChartData) => rScale(d.population))
+    .attr("opacity", 1)
+    .style("fill", (d: ChartData) => colorScale(d.continent));
+
   return <div>drawChart</div>;
 };
 export default drawChart;

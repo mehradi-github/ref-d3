@@ -18,7 +18,7 @@ const Circles: FC<Iprop> = ({
   colorScale,
   selectedContinent,
 }) => {
-  const chartData = data.filter((d) => d.year === year);
+  const chartData: ChartData[] = data.filter((d) => d.year === year);
   const svgRef = useRef<SVGSVGElement>(null);
   useEffect(() => {
     const SVG = select(svgRef.current!);
@@ -34,6 +34,12 @@ const Circles: FC<Iprop> = ({
     });
   }, [chartData, height, width, colorScale, selectedContinent]);
 
-  return <svg ref={svgRef} viewBox={`0 0 ${width} ${height}`}></svg>;
+  return (
+    <svg ref={svgRef} viewBox={`0 0 ${width} ${height}`}>
+      {chartData.map((d) => (
+        <circle key={d.country} fill="#FFF" />
+      ))}
+    </svg>
+  );
 };
 export default Circles;
