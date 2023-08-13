@@ -8,7 +8,7 @@ import Slider from "react-input-slider";
 const width = 960;
 const height = 500;
 function App() {
-  const [year, setYear] = useState({ x: 1975 });
+  const [year, setYear] = useState({ x: 1987 });
 
   const continents = [...new Set(data.map((d) => d.continent))];
   const color = scaleOrdinal().domain(continents).range(schemeTableau10);
@@ -21,7 +21,7 @@ function App() {
           axis="x"
           xmin={1975}
           xmax={2007}
-          xstep={5}
+          xstep={1}
           x={year.x}
           onChange={({ x }) => setYear((state) => ({ ...state, x }))}
         ></Slider>

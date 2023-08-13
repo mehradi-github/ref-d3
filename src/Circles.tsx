@@ -19,6 +19,7 @@ const Circles: FC<Iprop> = ({
   selectedContinent,
 }) => {
   const chartData: ChartData[] = data.filter((d) => d.year === year);
+  console.log(chartData, year);
   const svgRef = useRef<SVGSVGElement>(null);
   useEffect(() => {
     const SVG = select(svgRef.current!);
