@@ -51,6 +51,13 @@ const Circles: FC<Iprop> = ({
       <text x={20} y={height - 20} fill="grey">
         GDP per Capita
       </text>
+
+      <text
+        fill="grey"
+        transform={`translate(${20},${margin.top + 100}) rotate(-90) `}
+      >
+        Life Expectancy
+      </text>
     </svg>
   );
 };
