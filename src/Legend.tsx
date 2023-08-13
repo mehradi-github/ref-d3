@@ -1,5 +1,6 @@
 import { ScaleOrdinal } from "d3";
 import React, { FC } from "react";
+import "./Legend.scss";
 interface IProp {
   labels: string[];
   colorScale: ScaleOrdinal<string, any, never>;
