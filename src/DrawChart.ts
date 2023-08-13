@@ -1,5 +1,6 @@
 import {
   ScaleOrdinal,
+  axisBottom,
   axisLeft,
   extent,
   scaleLinear,
@@ -69,5 +70,7 @@ const drawChart = (
     .call(axisLeft(yScale).ticks(5))
     .attr("transform", `translate(${margin.left},0)`)
     .call((g: any) => g.select(".domain").remove());
+
+  SVG.append("g").call(axisBottom(xScale));
 };
 export default drawChart;
