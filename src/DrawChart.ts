@@ -67,6 +67,7 @@ const drawChart = (
 
   SVG.append("g")
     .call(axisLeft(yScale).ticks(5))
-    .attr("transform", `translate(${margin.left},0)`);
+    .attr("transform", `translate(${margin.left},0)`)
+    .call((g: any) => g.select(".domain").remove());
 };
 export default drawChart;
