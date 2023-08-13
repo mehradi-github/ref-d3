@@ -47,6 +47,10 @@ const Circles: FC<Iprop> = ({
       >
         {year}
       </text>
+
+      <text x={20} y={height - 20} fill="grey">
+        GDP per Capita
+      </text>
     </svg>
   );
 };
