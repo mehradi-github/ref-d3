@@ -28,7 +28,7 @@ function App() {
       </div>
       <div className="chart">
         <Circles
-          year={1957}
+          year={year.x}
           width={width}
           height={height}
           colorScale={color}
