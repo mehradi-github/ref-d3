@@ -15,10 +15,10 @@ const Legend: FC<IProp> = ({ labels, colorScale, setContinent, continent }) => {
           <div
             style={{ fontWeight: continent === l ? 700 : 400 }}
             className="legend-row"
+            onClick={() => setContinent(l)}
           >
             <div
               style={{ backgroundColor: colorScale(l) }}
-              onClick={() => setContinent(l)}
               className="legend-marker"
             ></div>
             <p className="legend-label">{l}</p>
