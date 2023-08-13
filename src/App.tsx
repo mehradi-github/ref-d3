@@ -17,7 +17,14 @@ function App() {
       <h1 className="header">D3.js chart</h1>
       <div className="slider">
         <p>{year.x}</p>
-        <Slider axis="x" xmin={1975} xmax={2007} xstep={5} x={year.x}></Slider>
+        <Slider
+          axis="x"
+          xmin={1975}
+          xmax={2007}
+          xstep={5}
+          x={year.x}
+          onChange={({ x }) => setYear((state) => ({ ...state, x }))}
+        ></Slider>
       </div>
       <div className="chart">
         <Circles
