@@ -16,6 +16,7 @@ const Legend: FC<IProp> = ({ labels, colorScale, setContinent, continent }) => {
             style={{ fontWeight: continent === l ? 700 : 400 }}
             className="legend-row"
             onClick={() => setContinent(l)}
+            key={l}
           >
             <div
               style={{ backgroundColor: colorScale(l) }}
