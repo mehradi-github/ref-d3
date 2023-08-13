@@ -3,6 +3,7 @@ import {
   axisBottom,
   axisLeft,
   extent,
+  mean,
   scaleLinear,
   scaleLog,
   scaleSqrt,
@@ -75,5 +76,19 @@ const drawChart = (
     .call(axisBottom(xScale).ticks(5))
     .attr("transform", `translate(0,${height - margin.bottom})`)
     .call((g: any) => g.select(".domain").remove());
+
+  SVG.select(".life-avg")
+    .transition()
+    .duration(500)
+    .attr("x1", margin.left)
+    .attr(
+      "y1",
+      mean(chartData, (d: ChartData) => yScale(d.life_exp))
+    )
+    .attr("x2", width - margin.right)
+    .attr(
+      "y2",
+      mean(chartData, (d: ChartData) => yScale(d.life_exp))
+    );
 };
 export default drawChart;
