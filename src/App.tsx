@@ -46,7 +46,7 @@ function App() {
           width={width}
           height={height}
           colorScale={color}
-          selectedContinent={continents}
+          selectedContinent={selectedContinent}
         ></Circles>
       </div>
     </div>

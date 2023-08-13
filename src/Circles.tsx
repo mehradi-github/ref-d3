@@ -7,7 +7,7 @@ interface Iprop {
   width: number;
   height: number;
   colorScale: any;
-  selectedContinent: string[];
+  selectedContinent: string;
 }
 const margin: Margin = { left: 50, right: 20, top: 30, bottom: 50 };
 

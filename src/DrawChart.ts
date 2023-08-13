@@ -31,7 +31,7 @@ const drawChart = (
   width: number,
   margin: Margin,
   colorScale: ScaleOrdinal<string, unknown, never>,
-  selectedContinent: string[]
+  selectedContinent: string
 ) => {
   // scales
   let maxRadius: number = 40;
@@ -52,10 +52,9 @@ const drawChart = (
     )
     .range([1, maxRadius]);
 
-  console.log(xScale(20));
-  console.log(yScale(50));
-  console.log(rScale(1100948));
-  console.log(colorScale("Africa"));
+  const colorPoint = (continent: string) => {
+    return selectedContinent === continent || selectedContinent === "all";
+  };
 
   SVG.selectAll("circle")
     .data(chartData)
@@ -64,8 +63,10 @@ const drawChart = (
     .attr("cx", (d: ChartData) => xScale(d.gdp_cap))
     .attr("cy", (d: ChartData) => yScale(d.life_exp))
     .attr("r", (d: ChartData) => rScale(d.population))
-    .attr("opacity", 1)
-    .style("fill", (d: ChartData) => colorScale(d.continent));
+    .attr("opacity", (d: ChartData) => (colorPoint(d.continent) ? 1 : 0.5))
+    .style("fill", (d: ChartData) =>
+      colorPoint(d.continent) ? colorScale(d.continent) : "lightgrey"
+    );
 
   SVG.append("g")
     .call(axisLeft(yScale).ticks(5))
