@@ -1,4 +1,11 @@
-import { ScaleOrdinal, extent, scaleLinear, scaleLog, scaleSqrt } from "d3";
+import {
+  ScaleOrdinal,
+  axisLeft,
+  extent,
+  scaleLinear,
+  scaleLog,
+  scaleSqrt,
+} from "d3";
 
 export type ChartData = {
   country: string;
@@ -57,5 +64,9 @@ const drawChart = (
     .attr("r", (d: ChartData) => rScale(d.population))
     .attr("opacity", 1)
     .style("fill", (d: ChartData) => colorScale(d.continent));
+
+  SVG.append("g")
+    .call(axisLeft(yScale))
+    .attr("transform", `translate(${margin.left},0)`);
 };
 export default drawChart;
