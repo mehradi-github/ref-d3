@@ -39,6 +39,14 @@ const Circles: FC<Iprop> = ({
       {chartData.map((d) => (
         <circle key={d.country} fill="#FFF" />
       ))}
+
+      <text
+        fontSize="48px"
+        x={width - margin.right - 150}
+        y={height - margin.bottom - 50}
+      >
+        {year}
+      </text>
     </svg>
   );
 };
