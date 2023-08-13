@@ -72,7 +72,7 @@ const drawChart = (
     .call((g: any) => g.select(".domain").remove());
 
   SVG.append("g")
-    .call(axisBottom(xScale))
+    .call(axisBottom(xScale).ticks(5))
     .attr("transform", `translate(0,${height - margin.bottom})`);
 };
 export default drawChart;
