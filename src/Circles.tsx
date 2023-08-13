@@ -37,6 +37,7 @@ const Circles: FC<Iprop> = ({
   return (
     <svg ref={svgRef} viewBox={`0 0 ${width} ${height}`}>
       <line stroke="lightgrey" strokeDasharray={"10 2"} className="life-avg" />
+      <line stroke="lightgrey" strokeDasharray={"10 2"} className="gdp-avg" />
       {chartData.map((d) => (
         <circle key={d.country} fill="#FFF" />
       ))}

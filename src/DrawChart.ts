@@ -90,5 +90,18 @@ const drawChart = (
       "y2",
       mean(chartData, (d: ChartData) => yScale(d.life_exp))
     );
+  SVG.select(".gdp-avg")
+    .transition()
+    .duration(500)
+    .attr(
+      "x1",
+      mean(chartData, (d: ChartData) => xScale(d.gdp_cap))
+    )
+    .attr("y1", height - margin.bottom)
+    .attr(
+      "x2",
+      mean(chartData, (d: ChartData) => xScale(d.gdp_cap))
+    )
+    .attr("y2", margin.top);
 };
 export default drawChart;
