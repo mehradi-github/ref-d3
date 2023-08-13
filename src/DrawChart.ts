@@ -66,7 +66,7 @@ const drawChart = (
     .style("fill", (d: ChartData) => colorScale(d.continent));
 
   SVG.append("g")
-    .call(axisLeft(yScale))
+    .call(axisLeft(yScale).ticks(5))
     .attr("transform", `translate(${margin.left},0)`);
 };
 export default drawChart;
